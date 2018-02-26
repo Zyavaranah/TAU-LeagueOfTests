@@ -4,10 +4,11 @@ package org.leagueoftests.app;
  * Hello world!
  *
  */
-public class App 
+public class Champions
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+    public int id;
+    public String championName;
+    public int championPriceBE;
+    public int championPriceRP;   
+    
 }
