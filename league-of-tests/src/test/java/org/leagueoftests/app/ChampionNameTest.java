@@ -6,7 +6,7 @@ import static org.junit.Assert.assertNotNull;
 public class CharacterNameTest {
     @Test
     public void createTest() {
-        Champions champion = new Champion();
+        Champions champion = new Champions();
         assertNotNull(champion);
     }
 }
