@@ -39,10 +39,12 @@ public class ChampionTest {
         Champions champion = championsRepository.getById(1);
         championsRepository.delete(champion);
         assertNull(championsRepository.getById(champion.getId()));
+        assertNotNull(championsRepository.getById(2));
     }
 
     @Test
     public void update() {
+        Champions otherChampion = championsRepository.getById(4);
         Champions champion = new Champions();
         champion.setId(1);
         champion.setChampionName("Ashe");
@@ -51,7 +53,8 @@ public class ChampionTest {
         Champions oldChampion=championsRepository.getById(1);
         championsRepository.update(oldChampion, champion);
         assertEquals(championsRepository.getById(oldChampion.getId()).getChampionName(), championsRepository.getById(champion.getId()).getChampionName());
-    }
+        assertNotEquals(otherChampion,champion);
+        }
 
     @Before
     public void init() {
