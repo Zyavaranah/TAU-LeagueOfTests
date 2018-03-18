@@ -1,13 +1,16 @@
 package org.leagueoftests.app;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
 import static org.junit.Assert.*;
 
 import org.leagueoftests.repository.ChampionsRepository;
 import org.leagueoftests.repository.ChampionsRepositoryFactory;
 
 import org.junit.Before;
-
+@RunWith(JUnit4.class)
 public class ChampionTest {
     ChampionsRepository championsRepository;
 
@@ -38,7 +41,7 @@ public class ChampionTest {
     public void delete() {
         Champions champion = championsRepository.getById(1);
         championsRepository.delete(champion);
-        assertNull(championsRepository.getById(champion.getId()));
+        assertNull(championsRepository.getById(champion.getId()).getChampionName());
         assertNotNull(championsRepository.getById(2));
     }
 
