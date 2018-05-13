@@ -2,10 +2,13 @@ package org.leagueoftests.repository;
 
 import org.leagueoftests.app.Champions;
 
+
+import org.springframework.stereotype.Component;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
+@Component
 public class ChampionsRepositoryImplementation implements ChampionsRepository {
 
     private Connection connection;

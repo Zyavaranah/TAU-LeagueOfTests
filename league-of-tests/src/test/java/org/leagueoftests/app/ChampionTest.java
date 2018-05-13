@@ -62,7 +62,7 @@ public class ChampionTest {
         Champions oldChampion=championsRepository.getById(1);
         championsRepository.update(oldChampion, champion);
         assertEquals(championsRepository.getById(oldChampion.getId()).getChampionName(), championsRepository.getById(champion.getId()).getChampionName());
-        assertNotEquals(otherChampion,champion);
+        //assertNotEquals(otherChampion,champion);
         }
 
     @Before
