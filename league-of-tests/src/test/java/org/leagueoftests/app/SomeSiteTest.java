@@ -24,22 +24,18 @@ public class SomeSiteTest {
 	private boolean acceptNextAlert = true;
 	private StringBuffer verificationErrors = new StringBuffer();
 
-
-
 	@Before
 	public void setUp() throws Exception {
 		final ChromeOptions chromeOptions = new ChromeOptions();
-    chromeOptions.setBinary("/path/to/google-chrome-stable");
-    chromeOptions.addArguments("--headless");
-    chromeOptions.addArguments("--disable-gpu");
+		chromeOptions.setBinary("/path/to/google-chrome-stable");
+		chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--disable-gpu");
 
-    final DesiredCapabilities dc = new DesiredCapabilities();
-    dc.setJavascriptEnabled(true);
-    dc.setCapability(
-        ChromeOptions.CAPABILITY, chromeOptions
-    );
+		final DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setJavascriptEnabled(true);
+		dc.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
-     driver = new ChromeDriver(dc);
+		driver = new ChromeDriver(dc);
 		baseUrl = "http://automationpractice.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
@@ -60,52 +56,57 @@ public class SomeSiteTest {
 		driver.get(baseUrl + "/index.php");
 		driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"email_create\"]")).clear();
-		driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("jestemmailem@zyavka"+new Random().nextInt(777777)+".pl");
+		driver.findElement(By.xpath("//*[@id=\"email_create\"]"))
+				.sendKeys("jestemmailem@zyavka" + new Random().nextInt(777777) + ".pl");
 		driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]")).click();
 		Thread.sleep(500);
 		assertEquals(false, driver.findElement(By.xpath("//*[@id=\"create_account_error\"]")).isDisplayed());
 		driver.findElement(By.xpath(("//*[@id=\"id_gender2\"]"))).click();
-		assertEquals(true,driver.findElement(By.xpath(("//*[@id=\"id_gender2\"]"))).isSelected());
+		assertEquals(true, driver.findElement(By.xpath(("//*[@id=\"id_gender2\"]"))).isSelected());
 		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).sendKeys("mamimie");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).getAttribute("value").length());
+		assertNotEquals(0,
+				driver.findElement(By.xpath("//*[@id=\"customer_firstname\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).sendKeys("inazwisko");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).getAttribute("value").length());
-		assertEquals(true,driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value").contains(Character.toString('@')));
+		assertNotEquals(0,
+				driver.findElement(By.xpath("//*[@id=\"customer_lastname\"]")).getAttribute("value").length());
+		assertEquals(true, driver.findElement(By.xpath("//*[@id=\"email\"]")).getAttribute("value")
+				.contains(Character.toString('@')));
 		driver.findElement(By.xpath("//*[@id=\"passwd\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("maslo");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"passwd\"]")).getAttribute("value").length());
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"passwd\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"firstname\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"firstname\"]")).sendKeys("mamimie");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"firstname\"]")).getAttribute("value").length());
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"firstname\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"lastname\"]")).sendKeys("inazwisko");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"lastname\"]")).getAttribute("value").length());
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"lastname\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"address1\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"address1\"]")).sendKeys("niejestembezdomna 1");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"address1\"]")).getAttribute("value"));
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"address1\"]")).getAttribute("value"));
 		driver.findElement(By.xpath("//*[@id=\"city\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"city\"]")).sendKeys("samjesteswiesniak");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"city\"]")).getAttribute("value"));
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"city\"]")).getAttribute("value"));
 		driver.findElement(By.xpath("//*[@id=\"id_state\"]")).click();
 		driver.findElement(By.xpath("//*[@id=\"id_state\"]/option[17]")).click();
-		assertNotEquals(null,driver.findElement(By.xpath("//*[@id=\"id_state\"]/option[17]")).getAttribute("value"));
+		assertNotEquals(null, driver.findElement(By.xpath("//*[@id=\"id_state\"]/option[17]")).getAttribute("value"));
 		driver.findElement(By.xpath("//*[@id=\"postcode\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"postcode\"]")).sendKeys("69696");
-		assertEquals(5,driver.findElement(By.xpath("//*[@id=\"postcode\"]")).getAttribute("value").length());
+		assertEquals(5, driver.findElement(By.xpath("//*[@id=\"postcode\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"id_country\"]")).click();
 		driver.findElement(By.xpath("//*[@id=\"id_country\"]/option[2]")).click();
-		assertNotEquals(null,driver.findElement(By.xpath("//*[@id=\"id_country\"]/option[2]")).getAttribute("value"));
+		assertNotEquals(null, driver.findElement(By.xpath("//*[@id=\"id_country\"]/option[2]")).getAttribute("value"));
 		driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).sendKeys("696969696");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).getAttribute("value").length());
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"phone_mobile\"]")).getAttribute("value").length());
 		driver.findElement(By.xpath("//*[@id=\"alias\"]")).clear();
 		driver.findElement(By.xpath("//*[@id=\"alias\"]")).sendKeys("domekzkartonow");
-		assertNotEquals(0,driver.findElement(By.xpath("//*[@id=\"alias\"]")).getAttribute("value"));
+		assertNotEquals(0, driver.findElement(By.xpath("//*[@id=\"alias\"]")).getAttribute("value"));
 		driver.findElement(By.xpath("//*[@id=\"submitAccount\"]/span")).click();
 		Thread.sleep(500);
-		assertEquals(true, driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a/span")).isDisplayed());
+		assertEquals(true,
+				driver.findElement(By.xpath("//*[@id=\"center_column\"]/div/div[1]/ul/li[1]/a/span")).isDisplayed());
 	}
 
 	@After
