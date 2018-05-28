@@ -24,7 +24,7 @@ public class SomeSiteTest {
 
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "src/test/java/org/leagueoftests/app/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/test/java/org/leagueoftests/app/chromedriver");
 		driver = new ChromeDriver();
 		baseUrl = "http://automationpractice.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
