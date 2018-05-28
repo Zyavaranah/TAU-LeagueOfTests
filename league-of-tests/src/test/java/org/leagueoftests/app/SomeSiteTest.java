@@ -7,6 +7,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -22,10 +24,22 @@ public class SomeSiteTest {
 	private boolean acceptNextAlert = true;
 	private StringBuffer verificationErrors = new StringBuffer();
 
+
+
 	@Before
 	public void setUp() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "src/test/java/org/leagueoftests/app/chromedriver");
-		driver = new ChromeDriver();
+		final ChromeOptions chromeOptions = new ChromeOptions();
+    chromeOptions.setBinary("/path/to/google-chrome-stable");
+    chromeOptions.addArguments("--headless");
+    chromeOptions.addArguments("--disable-gpu");
+
+    final DesiredCapabilities dc = new DesiredCapabilities();
+    dc.setJavascriptEnabled(true);
+    dc.setCapability(
+        ChromeOptions.CAPABILITY, chromeOptions
+    );
+
+     driver = new ChromeDriver(dc);
 		baseUrl = "http://automationpractice.com/";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
