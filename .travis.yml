@@ -1,3 +1,12 @@
 language: java
 script:
-- cd league-of-tests; mvn test
+- cd league-of-tests; 
+- cd src/test/java/org/leagueoftests/app;
+chmod 777 chromedriver;
+- cd..
+- cd..
+- cd..
+- cd..
+- cd..
+- cd..
+mvn test;
