@@ -3,15 +3,19 @@ package org.leagueoftests.app;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 
+@RunWith(JUnit4.class)
 public class SomeSiteTest {
 	private WebDriver driver;
 	private String baseUrl;
@@ -42,7 +46,7 @@ public class SomeSiteTest {
 		driver.get(baseUrl + "/index.php");
 		driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"email_create\"]")).clear();
-		driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("jestemmailem@zyavka.pl");
+		driver.findElement(By.xpath("//*[@id=\"email_create\"]")).sendKeys("jestemmailem@zyavka"+new Random().nextInt(777777)+".pl");
 		driver.findElement(By.xpath("//*[@id=\"SubmitCreate\"]")).click();
 		Thread.sleep(500);
 		assertEquals(false, driver.findElement(By.xpath("//*[@id=\"create_account_error\"]")).isDisplayed());
