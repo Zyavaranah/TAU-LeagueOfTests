@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.leagueoftests.app.ChampionMockedTest" time="1.377" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.leagueoftests.app.ChampionMockedTest" time="1.442" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_171\jre\bin"/>
@@ -28,7 +28,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:\Users\Marta Siejka\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1250"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Marta Siejka\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Common Files\Adobe\AGL;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Users\Marta Siejka\Downloads\chromedriver_win32;C:\Users\Marta Siejka\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Marta Siejka\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Users\Marta Siejka\Downloads\chromedriver_win32;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\Marta Siejka\Downloads\phantomjs-2.1.1-windows\phantomjs-2.1.1-windows\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Common Files\Adobe\AGL;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Users\Marta Siejka\Downloads\chromedriver_win32;C:\Users\Marta Siejka\Downloads;C:\Users\Marta Siejka\Downloads;C:\Program Files\Microsoft VS Code\bin;C:\Users\Marta Siejka\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin;C:\Program Files\Java\jdk1.8.0_171\bin;C:\Users\Marta Siejka\Downloads\chromedriver_win32;;."/>
     <property name="maven.conf" value="C:\Users\Marta Siejka\Downloads\apache-maven-3.5.3-bin\apache-maven-3.5.3\bin\../conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
@@ -64,9 +64,9 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="DeleteChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.065"/>
-  <testcase name="GetAllChampions" classname="org.leagueoftests.app.ChampionMockedTest" time="0.264"/>
-  <testcase name="GetChampionById" classname="org.leagueoftests.app.ChampionMockedTest" time="0.002"/>
-  <testcase name="UpdateChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.001"/>
-  <testcase name="InsertChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.002"/>
+  <testcase name="DeleteChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.033"/>
+  <testcase name="GetAllChampions" classname="org.leagueoftests.app.ChampionMockedTest" time="0.344"/>
+  <testcase name="GetChampionById" classname="org.leagueoftests.app.ChampionMockedTest" time="0.005"/>
+  <testcase name="UpdateChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.002"/>
+  <testcase name="InsertChampion" classname="org.leagueoftests.app.ChampionMockedTest" time="0.004"/>
 </testsuite>
